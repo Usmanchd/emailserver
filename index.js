@@ -20,7 +20,7 @@ app.post('/quote', (req, res) => {
 
     const data = {
       from: `Request a Quote <usman.aslam0701@gmail.com>`,
-      to: 'uxman0701@gmail.com',
+      to: 'CompanionLogisticsInc@gmail.com',
       subject: `${subject} / ${email}`,
       text: `Email ${email}`,
       html: `<div>
@@ -48,7 +48,7 @@ app.post('/applytodrive', (req, res) => {
 
     const data = {
       from: `Apply To Drive <usman.aslam0701@gmail.com>`,
-      to: 'uxman0701@gmail.com',
+      to: 'CompanionLogisticsInc@gmail.com',
       subject: `Driver Application / ${email}`,
       text: `Email ${email}`,
       html: `<div>
