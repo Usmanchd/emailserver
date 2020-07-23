@@ -20,7 +20,7 @@ app.post('/quote', (req, res) => {
 
     const data = {
       from: `Request a Quote <usman.aslam0701@gmail.com>`,
-      to: 'CompanionLogisticsInc@gmail.com',
+      to: 'uxman0701@gmail.com',
       subject: `${subject} / ${email}`,
       text: `Email ${email}`,
       html: `<div>
@@ -34,10 +34,9 @@ app.post('/quote', (req, res) => {
     };
 
     mailgun.messages().send(data, function (error, body) {
-      if (error) console.log(error);
+      if (error) res.json(error);
+      res.json('OK');
     });
-
-    res.json('OK');
   } catch (error) {
     res.json('error');
   }
