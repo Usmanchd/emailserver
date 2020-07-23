@@ -47,7 +47,7 @@ app.post('/applytodrive', (req, res) => {
     const { name, email, number, experience } = req.body;
 
     const data = {
-      from: `Request a Quote <usman.aslam0701@gmail.com>`,
+      from: `Apply To Drive <usman.aslam0701@gmail.com>`,
       to: 'uxman0701@gmail.com',
       subject: `Driver Application / ${email}`,
       text: `Email ${email}`,
