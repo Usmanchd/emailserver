@@ -10,6 +10,10 @@ app.use(cors());
 
 app.use(express.json({ extended: false }));
 
+app.get('/', (req, res) => {
+  res.json('Working');
+});
+
 app.post('/quote', (req, res) => {
   try {
     const { name, email, subject, message } = req.body;
