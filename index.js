@@ -42,6 +42,34 @@ app.post('/quote', (req, res) => {
   }
 });
 
+app.post('/applytodrive', (req, res) => {
+  try {
+    const { name, email, number, experience } = req.body;
+
+    const data = {
+      from: `Request a Quote <usman.aslam0701@gmail.com>`,
+      to: 'uxman0701@gmail.com',
+      subject: `Driver Application / ${email}`,
+      text: `Email ${email}`,
+      html: `<div>
+              <h1>Appliction of Driver</h1>
+              <p>From: ${name}</p> 
+              <p>Email: ${email} <b>(REPLY TO THIS EMAIL)</b></p> 
+              <p>Contact No: ${number}</p> 
+              <p><b>Experience</b>: ${experience}</p>
+            </div>
+            <h2>**Do not Reply to this mail**</h2>`,
+    };
+
+    mailgun.messages().send(data, function (error, body) {
+      if (error) res.json(error);
+      res.json('OK');
+    });
+  } catch (error) {
+    res.json('error');
+  }
+});
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
